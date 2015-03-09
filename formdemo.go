@@ -2,8 +2,8 @@ package main
 
 import (
 	"flag"
+	_ "github.com/CJ-Jackson/formdemo/app"
 	"net/http"
-	_ "pj/formdemo/app"
 )
 
 var address = flag.String("address", ":8080", "Specify Address")
