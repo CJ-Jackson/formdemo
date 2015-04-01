@@ -6,6 +6,7 @@ import (
 
 	"github.com/cjtoolkit/dir"
 	"github.com/cjtoolkit/form"
+	"github.com/cjtoolkit/form/formutil"
 	"github.com/cjtoolkit/form/secondlayer/bootstrap"
 )
 
@@ -87,7 +88,7 @@ $("form").submit(function( event ) {
 	case "GET", "HEAD":
 		get()
 	case "POST": // For those without Javascript.
-		r.ParseForm()
+		formutil.ParseBody(r)
 		if f.MustValidate(r, &value) {
 			flash = fmt.Sprintf(`<div class="alert alert-success" role="alert">Hello, %s %s %s!</div>`,
 				es(value.Title), es(value.Firstname), es(value.Secondname))
