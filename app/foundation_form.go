@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/cjtoolkit/form"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form"
 )
 
 type foundationForm struct {

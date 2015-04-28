@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/cjtoolkit/dir"
-	_ "github.com/cjtoolkit/form/lang/enGB"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/dir"
+	_ "github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form/lang/enGB"
 )
 
 func callError(w http.ResponseWriter, r *http.Request) func() {

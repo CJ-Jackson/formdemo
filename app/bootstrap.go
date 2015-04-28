@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/cjtoolkit/dir"
-	"github.com/cjtoolkit/form"
-	"github.com/cjtoolkit/form/formutil"
-	"github.com/cjtoolkit/form/secondlayer/bootstrap"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/dir"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form/formutil"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form/secondlayer/bootstrap"
 )
 
 func bootstrapFns(w http.ResponseWriter, r *http.Request) {

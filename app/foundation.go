@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/cjtoolkit/dir"
-	"github.com/cjtoolkit/form"
-	"github.com/cjtoolkit/form/secondlayer/foundation"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/dir"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form"
+	"github.com/CJ-Jackson/formdemo/internal/github.com/cjtoolkit/form/secondlayer/foundation"
 )
 
 func foundationFns(w http.ResponseWriter, r *http.Request) {
