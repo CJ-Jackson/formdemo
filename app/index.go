@@ -23,7 +23,8 @@ func index(w http.ResponseWriter, r *http.Request) {
 <li><a href="/foundation">Foundation</a></li>
 </ul>
 
-(*) Uses AJAX via PUT on Javascript enabled web browser!
+(*) Uses AJAX via PUT on Javascript enabled web browser!<br>
+<a href="https://github.com/CJ-Jackson/formdemo">https://github.com/CJ-Jackson/formdemo</a>
 
 </div>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
