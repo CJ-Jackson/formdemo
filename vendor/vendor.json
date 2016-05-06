@@ -1,5 +1,61 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": []
+	"package": [
+		{
+			"checksumSHA1": "lAL8JBKEv4VLRKc5I5Y3kooRuuE=",
+			"path": "github.com/cjtoolkit/cli",
+			"revision": "5f7bb8645d75978a768d05f65c3c8bcf56c3345c",
+			"revisionTime": "2016-05-02T12:34:07Z"
+		},
+		{
+			"checksumSHA1": "8G6X3eOtWRJgpGkaq1DQmbigT7E=",
+			"path": "github.com/cjtoolkit/cli/arguments",
+			"revision": "5f7bb8645d75978a768d05f65c3c8bcf56c3345c",
+			"revisionTime": "2016-05-02T12:34:07Z"
+		},
+		{
+			"checksumSHA1": "kyadRT/+AAZ4LyE+cFLO11P8WhU=",
+			"path": "github.com/cjtoolkit/cli/help",
+			"revision": "5f7bb8645d75978a768d05f65c3c8bcf56c3345c",
+			"revisionTime": "2016-05-02T12:34:07Z"
+		},
+		{
+			"checksumSHA1": "68FHVu96jFY00ViNay2oVpIV724=",
+			"path": "github.com/cjtoolkit/cli/options",
+			"revision": "5f7bb8645d75978a768d05f65c3c8bcf56c3345c",
+			"revisionTime": "2016-05-02T12:34:07Z"
+		},
+		{
+			"checksumSHA1": "WE1j3zKqbPbNYR5jnysReSMVreQ=",
+			"path": "github.com/cjtoolkit/form",
+			"revision": "da3df6c06e29fb96cd0f75707c422b66bedf9a49",
+			"revisionTime": "2016-05-03T20:06:01Z"
+		},
+		{
+			"checksumSHA1": "3lnBmBltVQvQJdL+Q4GGwpIDal8=",
+			"path": "github.com/cjtoolkit/form/fields",
+			"revision": "da3df6c06e29fb96cd0f75707c422b66bedf9a49",
+			"revisionTime": "2016-05-03T20:06:01Z"
+		},
+		{
+			"checksumSHA1": "gA9HIo7mcEYApKoxl2qSsJWsWEQ=",
+			"path": "github.com/cjtoolkit/form/form_mock",
+			"revision": "da3df6c06e29fb96cd0f75707c422b66bedf9a49",
+			"revisionTime": "2016-05-03T20:06:01Z"
+		},
+		{
+			"checksumSHA1": "9ClPfewUpnGTElfhUxfiO8l19sI=",
+			"path": "github.com/cjtoolkit/groot",
+			"revision": "c7f7cb8581d31a6280d6d38ed8acf2124dc85412",
+			"revisionTime": "2016-05-06T20:57:10Z"
+		},
+		{
+			"checksumSHA1": "7HkifKqEzXV9/+eZJOkmNWspGm4=",
+			"path": "github.com/cjtoolkit/groot/httprouter",
+			"revision": "c7f7cb8581d31a6280d6d38ed8acf2124dc85412",
+			"revisionTime": "2016-05-06T20:57:10Z"
+		}
+	],
+	"rootPath": "github.com/CJ-Jackson/formdemo"
 }
