@@ -5,7 +5,7 @@ type ErrorHandler struct {
 	recv  interface{}
 }
 
-func NewErrorHandler(recv interface{}) ErrorHandler {
+func NewFormDemoErrorHandler(recv interface{}) ErrorHandler {
 	return ErrorHandler{
 		error: GetFormDemoError(),
 		recv:  recv,
