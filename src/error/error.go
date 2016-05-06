@@ -11,7 +11,7 @@ type Error struct {
 	skeleton skeleton.SkeletonInterface
 }
 
-func (e *Error) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (e *Error) ServeHTTP(w http.ResponseWriter, _ *http.Request) {
 	e.skeleton.SetResponseWriter(w)
 	e.skeleton.Execute()
 }
