@@ -31,6 +31,10 @@ func (s *Skeleton) Title() {
 	return s.title
 }
 
+func (s *Skeleton) SetBody(body io.Reader) {
+	s.body = body
+}
+
 func (s *Skeleton) Body() html.HTML {
 	return common.ReaderToHtml(s.body)
 }
