@@ -9,6 +9,19 @@ import (
 	"time"
 )
 
+const (
+	DEMO_FORM_LETTER_ONLY = "demo_form_letter_only"
+)
+
+var (
+	letterOnly = regexp.MustCompile(`^[a-zA-Z]+$`)
+)
+
+func init() {
+	form.AddToEnglishLanguageMap(DEMO_FORM_LETTER_ONLY,
+		form.BuildLanguageTemplate(`'{{.Label}}' must only be letters.`))
+}
+
 type DemoForm struct {
 	tpl    *html.Template
 	fields []form.FormFieldInterface
@@ -40,18 +53,7 @@ func NewDemoForm() *DemoForm {
 	return (&DemoForm{tpl: demoFormHtml, IdModel: 42}).InitField()
 }
 
-const (
-	DEMO_FORM_LETTER_ONLY = "demo_form_letter_only"
-)
 
-var (
-	letterOnly = regexp.MustCompile(`^[a-zA-Z]+$`)
-)
-
-func init() {
-	form.AddToEnglishLanguageMap(DEMO_FORM_LETTER_ONLY,
-		form.BuildLanguageTemplate(`'{{.Label}}' must only be letters.`))
-}
 
 func (df *DemoForm) InitField() *DemoForm {
 	df.fields = []form.FormFieldInterface{
