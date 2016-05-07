@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	_ "github.com/CJ-Jackson/formdemo/src"
+	_ "github.com/CJ-Jackson/formdemo/web"
 	"github.com/cjtoolkit/cli"
 	"runtime/debug"
 )
