@@ -1,4 +1,4 @@
-package error
+package http_error
 
 import (
 	"github.com/CJ-Jackson/formdemo/src/skeleton"

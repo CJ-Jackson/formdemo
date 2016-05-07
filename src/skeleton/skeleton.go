@@ -27,7 +27,7 @@ func (s *Skeleton) SetTitle(title string) {
 	s.title = title
 }
 
-func (s *Skeleton) Title() {
+func (s *Skeleton) Title() string {
 	return s.title
 }
 
@@ -47,4 +47,10 @@ func (s *Skeleton) Execute() {
 	s.w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	s.w.WriteHeader(s.status)
 	s.execute(s.w)
+}
+
+func SkeletonResponseWriter(w http.ResponseWriter) func(*Skeleton) {
+	return func(s *Skeleton) {
+		s.w = w
+	}
 }

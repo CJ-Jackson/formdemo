@@ -1,4 +1,4 @@
-package error
+package http_error
 
 type ErrorInterface interface {
 	NotFound()
