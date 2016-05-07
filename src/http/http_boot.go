@@ -1,12 +1,12 @@
 package http
 
 import (
-	"net/http"
 	"github.com/CJ-Jackson/formdemo/src/http_error"
 	"github.com/CJ-Jackson/formdemo/src/router"
+	"net/http"
 )
 
-type httpBoot struct {}
+type httpBoot struct{}
 
 func (b httpBoot) handleError(w http.ResponseWriter, r *http.Request) {
 	http_error.NewFormDemoErrorHandler(recover()).GetHttpHandler().ServeHTTP(w, r)

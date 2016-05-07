@@ -3,12 +3,12 @@ package http_error
 import "net/http"
 
 type ErrorHandler struct {
-	recv  interface{}
+	recv interface{}
 }
 
 func NewFormDemoErrorHandler(recv interface{}) ErrorHandler {
 	return ErrorHandler{
-		recv:  recv,
+		recv: recv,
 	}
 }
 

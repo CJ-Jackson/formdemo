@@ -1,9 +1,9 @@
 package http
 
 import (
+	"fmt"
 	"github.com/cjtoolkit/cli"
 	"github.com/cjtoolkit/cli/options"
-	"fmt"
 	"log"
 	"net/http"
 )
