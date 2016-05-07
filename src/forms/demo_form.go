@@ -44,6 +44,10 @@ type DemoForm struct {
 	SurnameModel string
 	SurnameErr   error
 
+	TimeZoneNorm  string
+	TimeZoneModel string
+	TimeZoneErr   error
+
 	TimeNorm  string
 	TimeModel time.Time
 	TimeErr   error
@@ -64,8 +68,10 @@ func (df *DemoForm) InitField() *DemoForm {
 		fields.NewString("surname", "Surname", &df.SurnameNorm, &df.SurnameModel, &df.SurnameErr,
 			fields.StringSuffix(&df.IdNorm), fields.StringMinRune(3, ""),
 			fields.StringPattern(letterOnly, DEMO_FORM_LETTER_ONLY)),
+		fields.NewString("timezone", "Timezone", &df.TimeZoneNorm, &df.TimeZoneModel, &df.TimeErr,
+			fields.StringSuffix(&df.IdNorm), fields.StringRequired("")),
 		fields.NewTime("time", "Time", &df.TimeNorm, &df.TimeModel, &df.TimeErr, time.Local,
-			fields.TimeFormats(), fields.TimeSuffix(&df.IdNorm)),
+			fields.TimeFormats(), fields.TimeSuffix(&df.IdNorm), fields.TimeUserLocation(&df.TimeZoneModel)),
 	}
 	return df
 }
@@ -98,8 +104,20 @@ func (df *DemoForm) SurnameField() fields.String {
 	return df.fields[3].(fields.String)
 }
 
+func (df *DemoForm) TimeZoneField() fields.String {
+	return df.fields[4].(fields.String)
+}
+
+func (df *DemoForm) MatchTimeZone(timezone string) bool {
+	return timezone == df.TimeZoneNorm
+}
+
+func (df *DemoForm) TimeZones() []string {
+	return []string{"Europe/Jersey", "Europe/Paris", "America/New_York"}
+}
+
 func (df *DemoForm) TimeField() fields.Time {
-	return df.fields[4].(fields.Time)
+	return df.fields[5].(fields.Time)
 }
 
 func (df *DemoForm) HTML() html.HTML {

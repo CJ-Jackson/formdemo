@@ -56,7 +56,7 @@ func (i *IndexAction) Post() {
 		i.flash = `<div class="alert alert-success" role="alert">Perfect, all is well!</div>`
 		i.Output = fmt.Sprintf("Name: %s. %s %s Time: %s",
 			i.FormFields.TitleModel, i.FormFields.ForenameModel, i.FormFields.SurnameModel,
-			i.FormFields.TimeModel.Format("15:04"))
+			i.FormFields.TimeModel.Format("15:04 MST"))
 	} else {
 		i.flash = `<div class="alert alert-danger" role="alert">Hmm, there a problem with one or two fields!</div>`
 	}
