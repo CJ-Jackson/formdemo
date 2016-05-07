@@ -53,8 +53,6 @@ func NewDemoForm() *DemoForm {
 	return (&DemoForm{tpl: demoFormHtml, IdModel: 42}).InitField()
 }
 
-
-
 func (df *DemoForm) InitField() *DemoForm {
 	df.fields = []form.FormFieldInterface{
 		fields.NewInt("id", "ID", &df.IdNorm, &df.IdModel, &df.IdErr),

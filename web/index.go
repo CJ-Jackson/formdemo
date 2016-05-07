@@ -8,6 +8,7 @@ import (
 	"github.com/cjtoolkit/form"
 	html "html/template"
 	"net/http"
+	"fmt"
 )
 
 type IndexAction struct {
@@ -16,6 +17,8 @@ type IndexAction struct {
 	form       form.FormInterface
 	FormFields *forms.DemoForm
 	s          skeleton.SkeletonInterface
+	flash      string
+	Output     string
 }
 
 func (i IndexAction) Paths() []string {
@@ -49,8 +52,19 @@ func (i *IndexAction) Post() {
 	i.r.ParseForm()
 	i.form.SetForm(i.r.PostForm)
 	i.FormFields.Checked = true
-	i.form.Validate(i.FormFields)
+	if i.form.Validate(i.FormFields) {
+		i.flash = `<div class="alert alert-success" role="alert">Perfect, all is well!</div>`
+		i.Output = fmt.Sprintf("Name: %s. %s %s Time: %s",
+			i.FormFields.TitleModel, i.FormFields.ForenameModel, i.FormFields.SurnameModel,
+			i.FormFields.TimeModel.Format("15:04"))
+	} else {
+		i.flash = `<div class="alert alert-danger" role="alert">Hmm, there a problem with one or two fields!</div>`
+	}
 	i.Get()
+}
+
+func (i *IndexAction) Flash() html.HTML {
+	return html.HTML(i.flash)
 }
 
 func init() {
