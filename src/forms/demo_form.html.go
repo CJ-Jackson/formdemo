@@ -10,8 +10,8 @@ var demoFormHtml = html.Must(html.New("form_demo").Funcs(FuncsMap).Parse(`
 
 {{- $title := .TitleField -}}
 <div class="form-group {{- if IsErr .TitleErr }} has-error {{- else if .Checked }} has-success {{- end}}">
-	<label for="demo-title">{{ $title.Label }}</label>
-	<select id="demo-title" class="form-control" name="{{ $title.NameWithSuffix }}">
+	<label for="demo-title-{{ .IdNorm }}">{{ $title.Label }}</label>
+	<select id="demo-title-{{ .IdNorm }}" class="form-control" name="{{ $title.NameWithSuffix }}">
 		{{ range $title.InList -}}
 		<option value="{{.}}" {{- if $top.MatchTitle .}} selected {{- end }}>{{.}}</option>
 		{{- end}}
