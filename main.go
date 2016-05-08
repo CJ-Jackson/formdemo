@@ -18,7 +18,7 @@ func main() {
 		if nil != recv {
 			d := debug.Stack()
 
-			fmt.Println("Oh not something did not go right")
+			fmt.Println("Oh no something did not go right")
 
 			fmt.Printf("Info: %v", recv)
 
