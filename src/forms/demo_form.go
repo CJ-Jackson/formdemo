@@ -54,14 +54,15 @@ type DemoForm struct {
 }
 
 func NewDemoForm() *DemoForm {
-	return (&DemoForm{tpl: demoFormHtml, IdModel: 42}).InitField()
+	return (&DemoForm{tpl: demoFormHtml, IdModel: 42, TimeModel: time.Now()}).InitField()
 }
 
 func (df *DemoForm) InitField() *DemoForm {
 	df.fields = []form.FormFieldInterface{
 		fields.NewInt("id", "ID", &df.IdNorm, &df.IdModel, &df.IdErr),
 		fields.NewString("title", "Title", &df.TitleNorm, &df.TitleModel, &df.TitleErr,
-			fields.StringSuffix(&df.IdNorm), fields.StringRequired("")),
+			fields.StringSuffix(&df.IdNorm), fields.StringRequired(""),
+			fields.StringInList("", "Mr", "Mrs")),
 		fields.NewString("forename", "Forename", &df.ForenameNorm, &df.ForenameModel, &df.ForenameErr,
 			fields.StringSuffix(&df.IdNorm), fields.StringMinRune(3, ""),
 			fields.StringPattern(letterOnly, DEMO_FORM_LETTER_ONLY)),
@@ -69,9 +70,10 @@ func (df *DemoForm) InitField() *DemoForm {
 			fields.StringSuffix(&df.IdNorm), fields.StringMinRune(3, ""),
 			fields.StringPattern(letterOnly, DEMO_FORM_LETTER_ONLY)),
 		fields.NewString("timezone", "Timezone", &df.TimeZoneNorm, &df.TimeZoneModel, &df.TimeErr,
-			fields.StringSuffix(&df.IdNorm), fields.StringRequired("")),
-		fields.NewTime("time", "Time", &df.TimeNorm, &df.TimeModel, &df.TimeErr, time.Local,
-			fields.TimeFormats(), fields.TimeSuffix(&df.IdNorm), fields.TimeUserLocation(&df.TimeZoneModel)),
+			fields.StringSuffix(&df.IdNorm), fields.StringRequired(""),
+			fields.StringInList("", "Europe/Jersey", "Europe/Paris", "America/New_York")),
+		fields.NewTime("time", "Date and Time", &df.TimeNorm, &df.TimeModel, &df.TimeErr, time.Local,
+			fields.DateTimeLocalFormats(), fields.TimeSuffix(&df.IdNorm), fields.TimeUserLocation(&df.TimeZoneModel)),
 	}
 	return df
 }
@@ -86,10 +88,6 @@ func (df *DemoForm) IdField() fields.Int {
 
 func (df *DemoForm) MatchTitle(title string) bool {
 	return title == df.TitleNorm
-}
-
-func (df *DemoForm) Titles() []string {
-	return []string{"Mr", "Mrs"}
 }
 
 func (df *DemoForm) TitleField() fields.String {
@@ -110,10 +108,6 @@ func (df *DemoForm) TimeZoneField() fields.String {
 
 func (df *DemoForm) MatchTimeZone(timezone string) bool {
 	return timezone == df.TimeZoneNorm
-}
-
-func (df *DemoForm) TimeZones() []string {
-	return []string{"Europe/Jersey", "Europe/Paris", "America/New_York"}
 }
 
 func (df *DemoForm) TimeField() fields.Time {

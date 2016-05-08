@@ -2,13 +2,13 @@ package web
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/CJ-Jackson/formdemo/src/forms"
 	"github.com/CJ-Jackson/formdemo/src/router"
 	"github.com/CJ-Jackson/formdemo/src/skeleton"
 	"github.com/cjtoolkit/form"
 	html "html/template"
 	"net/http"
-	"fmt"
 )
 
 type IndexAction struct {
@@ -56,7 +56,7 @@ func (i *IndexAction) Post() {
 		i.flash = `<div class="alert alert-success" role="alert">Perfect, all is well!</div>`
 		i.Output = fmt.Sprintf("Name: %s. %s %s Time: %s",
 			i.FormFields.TitleModel, i.FormFields.ForenameModel, i.FormFields.SurnameModel,
-			i.FormFields.TimeModel.Format("15:04 MST"))
+			i.FormFields.TimeModel.Format("2006-01-02T15:04 MST"))
 	} else {
 		i.flash = `<div class="alert alert-danger" role="alert">Hmm, there a problem with one or two fields!</div>`
 	}

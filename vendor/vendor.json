@@ -29,20 +29,20 @@
 		{
 			"checksumSHA1": "A+2JIKiPPLH+fwvliSrJz3XWa8k=",
 			"path": "github.com/cjtoolkit/form",
-			"revision": "fb22329e311d9fc852f029019021b46bee02d712",
-			"revisionTime": "2016-05-07T18:20:57Z"
+			"revision": "49eba0aac65ef3d7c3e0650e0cc03a093dd6dd91",
+			"revisionTime": "2016-05-08T08:45:44Z"
 		},
 		{
-			"checksumSHA1": "Fv6dE3hIUIkEV5enlsaDMUA8Rvo=",
+			"checksumSHA1": "h4kVyx3rxoNdXzA2rdPFTC2eKbs=",
 			"path": "github.com/cjtoolkit/form/fields",
-			"revision": "fb22329e311d9fc852f029019021b46bee02d712",
-			"revisionTime": "2016-05-07T18:20:57Z"
+			"revision": "49eba0aac65ef3d7c3e0650e0cc03a093dd6dd91",
+			"revisionTime": "2016-05-08T08:45:44Z"
 		},
 		{
 			"checksumSHA1": "gA9HIo7mcEYApKoxl2qSsJWsWEQ=",
 			"path": "github.com/cjtoolkit/form/form_mock",
-			"revision": "fb22329e311d9fc852f029019021b46bee02d712",
-			"revisionTime": "2016-05-07T18:20:57Z"
+			"revision": "49eba0aac65ef3d7c3e0650e0cc03a093dd6dd91",
+			"revisionTime": "2016-05-08T08:45:44Z"
 		},
 		{
 			"checksumSHA1": "9ClPfewUpnGTElfhUxfiO8l19sI=",

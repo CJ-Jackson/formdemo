@@ -12,7 +12,7 @@ var demoFormHtml = html.Must(html.New("form_demo").Funcs(FuncsMap).Parse(`
 <div class="form-group {{- if IsErr .TitleErr }} has-error {{- else if .Checked }} has-success {{- end}}">
 	<label for="demo-title">{{ $title.Label }}</label>
 	<select id="demo-title" class="form-control" name="{{ $title.NameWithSuffix }}">
-		{{ range .Titles -}}
+		{{ range $title.InList -}}
 		<option value="{{.}}" {{- if $top.MatchTitle .}} selected {{- end }}>{{.}}</option>
 		{{- end}}
 	</select>
@@ -42,7 +42,7 @@ var demoFormHtml = html.Must(html.New("form_demo").Funcs(FuncsMap).Parse(`
 	<div class="col-md-6 form-group {{- if IsErr .TitleErr }} has-error {{- else if .Checked }} has-success {{- end}}">
 		<label for="demo-timezone-{{ .IdNorm }}">{{ $timezone.Label }}</label>
 		<select id="demo-timezone-{{ .IdNorm }}" class="form-control" name="{{ $timezone.NameWithSuffix }}">
-			{{ range .TimeZones -}}
+			{{ range $timezone.InList -}}
 			<option value="{{.}}" {{- if $top.MatchTimeZone .}} selected {{- end }}>{{.}}</option>
 			{{- end}}
 		</select>
@@ -52,7 +52,7 @@ var demoFormHtml = html.Must(html.New("form_demo").Funcs(FuncsMap).Parse(`
 	{{- $time := .TimeField -}}
 	<div class="col-md-6 form-group {{- if IsErr .TimeErr }} has-error {{- else if .Checked }} has-success {{- end}}">
 		<label for="demo-time-{{ .IdNorm }}">{{ $time.Label }}</label>
-		<input id="demo-time-{{ .IdNorm }}" class="form-control" type="time" name="{{ $time.NameWithSuffix }}" value="{{ .TimeNorm }}" >
+		<input id="demo-time-{{ .IdNorm }}" class="form-control" type="datetime-local" name="{{ $time.NameWithSuffix }}" value="{{ .TimeNorm }}" >
 		{{ ErrToHtml .TimeErr }}
 	</div>
 </div>
