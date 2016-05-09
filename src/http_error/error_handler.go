@@ -12,6 +12,10 @@ func NewFormDemoErrorHandler(recv interface{}) ErrorHandler {
 	}
 }
 
+func (e ErrorHandler) ServeHTTP(_ http.ResponseWriter, _ *http.Request) {
+	// Do nothing
+}
+
 func (e ErrorHandler) getHttpHandler() (http.Handler, int) {
 	switch value := e.recv.(type) {
 	case nil:
@@ -20,7 +24,7 @@ func (e ErrorHandler) getHttpHandler() (http.Handler, int) {
 		return value, 1
 	}
 
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {}), 0
+	return e, 0
 }
 
 func (e ErrorHandler) GetHttpHandler() http.Handler {
