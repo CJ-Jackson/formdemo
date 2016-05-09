@@ -1,13 +1,21 @@
 package web
 
-import html "html/template"
+import (
+	html "html/template"
+	"time"
+)
 
-var indexHtml = html.Must(html.New("index").Parse(`
-<h1>Form Demo</h1>
+var indexHtml = html.Must(html.New("index").Funcs(html.FuncMap{
+	"FormatTime": func(t time.Time) string { return t.Format("2006-01-02T15:04 MST") },
+}).Parse(`<h1>Form Demo</h1>
 
-{{ .Flash }}
-
-<p>{{ .Output }}</p>
+{{- if .Success -}}
+<div class="alert alert-success" role="alert">Perfect, all is well!</div>
+<p>Name: {{ .FormFields.TitleModel }} {{ .FormFields.ForenameModel }} {{ .FormFields.SurnameModel }}
+Time: {{ .FormFields.TimeModel|FormatTime }}</p>
+{{- else if .FormFields.Checked -}}
+<div class="alert alert-danger" role="alert">Hmm, there a problem with one or two fields!</div>
+{{- end -}}
 
 <form method="post" novalidate>
 	{{ .FormFields.HTML }}
