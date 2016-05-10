@@ -1,9 +1,9 @@
 package forms
 
 import (
-	"testing"
 	. "github.com/smartystreets/goconvey/convey"
 	"strings"
+	"testing"
 )
 
 func TestDemoForm(t *testing.T) {
