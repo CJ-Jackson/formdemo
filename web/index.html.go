@@ -23,5 +23,6 @@ Time: {{ .FormFields.TimeModel|FormatTime }}</p>
 </form>
 
 <br>
-<p><strong>Project URL: </strong> <a href="https://github.com/cjtoolkit/form">https://github.com/cjtoolkit/form</a></p>
+<p><strong>Project URL: </strong> <a href="https://github.com/cjtoolkit/form">https://github.com/cjtoolkit/form</a>
+<strong>Source Code of Demo: </strong> <a href="https://github.com/CJ-Jackson/formdemo">https://github.com/CJ-Jackson/formdemo</a></p>
 `))
