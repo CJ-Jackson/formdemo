@@ -11,7 +11,7 @@ var indexHtml = html.Must(html.New("index").Funcs(html.FuncMap{
 
 {{- if .Success -}}
 <div class="alert alert-success" role="alert">Perfect, all is well!</div>
-<p>Name: {{ .FormFields.TitleModel }} {{ .FormFields.ForenameModel }} {{ .FormFields.SurnameModel }}
+<p>Name: {{ .FormFields.TitleModel }}. {{ .FormFields.ForenameModel }} {{ .FormFields.SurnameModel }}
 Time: {{ .FormFields.TimeModel|FormatTime }}</p>
 {{- else if .FormFields.Checked -}}
 <div class="alert alert-danger" role="alert">Hmm, there a problem with one or two fields!</div>
