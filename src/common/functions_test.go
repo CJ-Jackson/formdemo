@@ -1,10 +1,10 @@
 package common
 
 import (
-	. "github.com/smartystreets/goconvey/convey"
-	"testing"
-	"strings"
 	"fmt"
+	. "github.com/smartystreets/goconvey/convey"
+	"strings"
+	"testing"
 )
 
 type readerWithAnxiety struct{}

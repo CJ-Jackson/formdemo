@@ -12,6 +12,12 @@ func ErrorToHtml(err error) html.HTML {
 	return html.HTML(`<span class="help-block">` + html.HTMLEscapeString(err.Error()) + `</span>`)
 }
 
-func IsErr(err error) bool {
-	return nil != err
+func FormGroup(err error, checked bool) html.HTMLAttr {
+	class := "form-group"
+	if nil != err {
+		class += " has-error"
+	} else if checked {
+		class += " has-success"
+	}
+	return html.HTMLAttr(class)
 }

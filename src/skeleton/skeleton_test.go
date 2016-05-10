@@ -1,10 +1,10 @@
 package skeleton
 
 import (
-	"testing"
+	"bytes"
 	. "github.com/smartystreets/goconvey/convey"
 	"strings"
-	"bytes"
+	"testing"
 )
 
 func TestSkeleton(t *testing.T) {

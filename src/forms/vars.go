@@ -7,7 +7,7 @@ import (
 
 var FuncsMap = html.FuncMap{
 	"ErrToHtml": ErrorToHtml,
-	"IsErr":     IsErr,
 	"StrMap":    form.StringSliceToMap,
 	"IntMap":    form.IntSliceToMap,
+	"FormGroup": FormGroup,
 }
