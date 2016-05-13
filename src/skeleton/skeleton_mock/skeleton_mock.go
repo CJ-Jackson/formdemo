@@ -1,7 +1,7 @@
 package skeleton_mock
 
 import (
-	"github.com/CJ-Jackson/shorty/src/common"
+	"github.com/CJ-Jackson/formdemo/src/common"
 	. "github.com/smartystreets/goconvey/convey"
 	html "html/template"
 	"io"
